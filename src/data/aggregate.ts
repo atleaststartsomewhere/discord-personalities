@@ -5,6 +5,7 @@ import joel from "./individuals/joel";
 import kevin from "./individuals/kevin";
 import ryan from "./individuals/ryan";
 import taylor from "./individuals/taylor";
+import sam from "./individuals/sam";
 
 type personalityType = {
     Extraverted: number,
@@ -62,6 +63,7 @@ function generateDatasets():Array<object> {
         generateDataset(kevin),
         generateDataset(ryan),
         generateDataset(taylor),
+        generateDataset(sam),
     ];
 }
 
