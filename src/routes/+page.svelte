@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import { Chart } from 'chart.js';
+    import { onMount } from 'svelte';
+
+    export let data;
+
+    let spiderChartElement: HTMLCanvasElement;
+
+    onMount(() => {
+        new Chart()
+    });
+</script>
