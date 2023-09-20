@@ -1,18 +1,20 @@
-<script>
+<script lang="ts">
+    import type { ChartConfiguration } from 'chart.js';
     import { Chart } from 'chart.js/auto';
     import { onMount } from 'svelte';
 
-    export let data;
-    let ctx;
-    let canvas;
+    export let data: { chartConfig: ChartConfiguration };
+
+    let canvas: HTMLCanvasElement | null = null;
 
     onMount(() => {
-        ctx = canvas.getContext('2d');
+        if (!canvas) return;  // Safeguard in case canvas isn't properly bound
 
-        var chart = new Chart(ctx, data.chartConfig)
+        let chart = new Chart(canvas, data.chartConfig);
     });
 
 </script>
+
 <h1>Discord Personalities</h1>
 <div>
     <canvas bind:this={canvas} height={600} width={400}></canvas>

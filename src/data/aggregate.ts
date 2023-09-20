@@ -29,7 +29,6 @@ type personalityType = {
 }
 
 function generateDataset(dataset: personalityType) {
-
     return {
         label: dataset.label,
         data: [
@@ -52,7 +51,6 @@ function generateDataset(dataset: personalityType) {
         pointHoverBackgroundColor: dataset.style.pointHoverBackgroundColor,
         pointHoverBorderColor: dataset.style.pointHoverBorderColor,
     }
-
 }
 
 function generateDatasets():Array<object> {
