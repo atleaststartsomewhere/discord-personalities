@@ -15,6 +15,7 @@ const config = {
 
 		alias: {
 			$data: 'src/data',
+			$components: 'src/components',
 		}
 	}
 };
