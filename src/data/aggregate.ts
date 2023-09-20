@@ -67,6 +67,47 @@ function generateDatasets():Array<object> {
     ];
 }
 
+
+function generateStackedDataset(dataset: personalityType) {
+
+    let valExtroverted = dataset.Extraverted > dataset.Introverted ? dataset.Extraverted - 50: -1 * dataset.Introverted + 50;
+    let valIntuitive   = dataset.Intuitive > dataset.Observant ? dataset.Intuitive - 50: -1 * dataset.Observant + 50;
+    let valThinking    = dataset.Thinking > dataset.Feeling ? dataset.Thinking - 50: -1 * dataset.Feeling + 50;
+    let valJudging     = dataset.Judging > dataset.Prospecting ? dataset.Judging - 50: -1 * dataset.Prospecting + 50;
+    let valAssertive   = dataset.Assertive > dataset.Turbulent ? dataset.Assertive - 50: -1 * dataset.Turbulent + 50;
+    
+    return {
+        label: dataset.label,
+        data: [
+            valExtroverted,
+            valIntuitive,
+            valThinking,
+            valJudging,
+            valAssertive,
+        ],
+        fill: true,
+        backgroundColor: dataset.style.backgroundColor,
+        borderColor: dataset.style.borderColor,
+        pointBackgroundColor: dataset.style.pointBackgroundColor,
+        pointBorderColor: dataset.style.pointBorderColor,
+        pointHoverBackgroundColor: dataset.style.pointHoverBackgroundColor,
+        pointHoverBorderColor: dataset.style.pointHoverBorderColor,
+    }
+}
+
+function generateStackedDatasets():Array<object> {
+    return [
+        generateStackedDataset(bella),
+        generateStackedDataset(brady),
+        generateStackedDataset(jason),
+        generateStackedDataset(joel),
+        generateStackedDataset(kevin),
+        generateStackedDataset(ryan),
+        generateStackedDataset(taylor),
+        generateStackedDataset(sam),
+    ];
+}
+
 const Data = {
     labels: [
         'Extraverted',
@@ -83,4 +124,15 @@ const Data = {
     datasets: generateDatasets(),
 };
 
-export { Data };
+const StackedData = {
+    labels: [
+        'Extraverted',
+        'Intuitive',
+        'Thinking',
+        'Judging',
+        'Assertive',
+    ],
+    datasets: generateStackedDatasets(),
+}
+
+export { Data, StackedData };

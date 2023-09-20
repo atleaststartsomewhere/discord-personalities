@@ -1,19 +1,34 @@
 <script lang="ts">    
     import { Chart } from 'chart.js/auto';
     import { onMount } from 'svelte';
-    import { Data } from '$data/aggregate';
+    import { StackedData } from '$data/aggregate';
 
     let ctx;
     let canvas;
 
     const config = {
         type: 'line',
-        data: Data,
+        data: StackedData,
         options: {
             elements: {
                 line: {
                     borderWidth: 3
                 }
+            },
+            scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Category'
+                }
+            },
+            y: {
+                stacked: true,
+                title: {
+                    display: true,
+                    text: 'Value'
+                }
+            }
             }
         },
     };
