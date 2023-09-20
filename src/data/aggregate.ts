@@ -6,7 +6,29 @@ import kevin from "./individuals/kevin";
 import ryan from "./individuals/ryan";
 import taylor from "./individuals/taylor";
 
-function generateDataset(dataset:object) {
+type personalityType = {
+    Extraverted: number,
+    Introverted: number,
+    Intuitive: number,
+    Observant: number,
+    Thinking: number,
+    Feeling: number,
+    Judging: number,
+    Prospecting: number,
+    Assertive: number,
+    Turbulent: number,
+    label: string,
+    style: {
+        backgroundColor: string,
+        borderColor: string,
+        pointBackgroundColor: string,
+        pointBorderColor: string,
+        pointHoverBackgroundColor: string,
+        pointHoverBorderColor: string,
+    }
+}
+
+function generateDataset(dataset: personalityType) {
 
     return {
         label: dataset.label,
