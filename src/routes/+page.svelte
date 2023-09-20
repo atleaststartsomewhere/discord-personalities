@@ -3,16 +3,17 @@
     import { onMount } from 'svelte';
 
     export let data;
-    let chart;
+    let ctx;
+    let canvas;
 
     onMount(() => {
-        const ctx = document.getElementById('myChart').getContext('2d');
+        ctx = canvas.getContext('2d');
 
-        console.log(data);
-
-        chart = new Chart(ctx, data.chartConfig)
+        var chart = new Chart(ctx, data.chartConfig)
     });
 
 </script>
 <h1>Discord Personalities</h1>
-<canvas id="myChart" height="600" width="400"></canvas>
+<div>
+    <canvas bind:this={canvas} height={600} width={400}></canvas>
+</div>
