@@ -48,14 +48,14 @@ function generateDatasets():Array<object> {
 const Data = {
     labels: [
         'Extraverted',
-        'Introverted',
         'Intuitive',
-        'Observant',
         'Thinking',
-        'Feeling',
         'Judging',
-        'Prospecting',
         'Assertive',
+        'Introverted',
+        'Observant',
+        'Feeling',
+        'Prospecting',
         'Turbulent',
     ],
     datasets: generateDatasets(),
