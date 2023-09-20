@@ -45,7 +45,7 @@ function generateDatasets():Array<object> {
     ];
 }
 
-export default {
+const Data = {
     labels: [
         'Extraverted',
         'Introverted',
@@ -60,3 +60,5 @@ export default {
     ],
     datasets: generateDatasets(),
 };
+
+export { Data };

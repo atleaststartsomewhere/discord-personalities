@@ -1,4 +1,4 @@
-import * as Data from '$data/aggregate';
+import { Data } from '$data/aggregate';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
